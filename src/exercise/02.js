@@ -42,7 +42,7 @@ function Greeting() {
   const n = typeof name
 
   function handleChange(event) {
-    setName(event.target.value)
+    setName(+event.target.value)
   }
 
   function submitHandler(e) {
@@ -54,7 +54,7 @@ function Greeting() {
     <div>
       <form onSubmit={submitHandler}>
         <label htmlFor="name">Name: </label>
-        <input value={name} onChange={handleChange} id="name" />
+        <input value={+name} onChange={handleChange} id="name" />
         <input value={key} onChange={e => setKey(e.target.value)} />
         <button type="submit">Submit key</button>
       </form>
